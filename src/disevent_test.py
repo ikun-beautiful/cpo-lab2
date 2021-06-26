@@ -1,8 +1,6 @@
 import unittest
 from src.disevent import *
 
-
-
 class StateMachineTest(unittest.TestCase):
     def test_convert_self_state(self):
         m = StateMachine("convert_self_state")

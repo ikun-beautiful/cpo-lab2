@@ -19,7 +19,7 @@ class StateMachine(object):
     def arg_type(num_args, type_args):
         def trace(f):
             def traced(self, *args, **kwargs):
-                # print("{}(*{}, **{}) START".format(f.__name__, args, kwargs))
+
                 if type(args[num_args - 1]) == type_args:
                     return f(self, *args, **kwargs)
                 else:
@@ -117,7 +117,7 @@ class StateMachine(object):
 
         return trace
 
-    # @args_3
+
     def execute(self, *source_events, limit=100, events=None):
 
         if events is None: events = []
@@ -180,7 +180,7 @@ class Node(object):
     def arg_type(num_args, type_args):
         def trace(f):
             def traced(self, *args, **kwargs):
-                # print("{}(*{}, **{}) START".format(f.__name__, args, kwargs))
+
                 if type(args[num_args - 1]) == type_args:
                     return f(self, *args, **kwargs)
                 else:
