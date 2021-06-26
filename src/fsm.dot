@@ -1,0 +1,28 @@
+
+digraph G {
+	rankdir=LR
+	A_up[shape=rarrow];
+	A_close[shape=rarrow];
+	n_0[label="!A_up->A_down"];
+	n_1[label="!A_close->A_open"];
+	n_2[label="A_up_and_A_close->D3_close up"];
+	n_3[label="A_close_and_A_down->D1_close down"];
+	n_4[label="A_open_and_A_up->D2_stop"];
+	n_5[label="A_close_and_A_up->D2_stop"];
+	D1_close_down[shape=rarrow];
+	D2_stop[shape=rarrow];
+	D3_close_up[shape=rarrow];
+	A_up -> n_2;
+	A_up -> n_0;
+	A_up -> n_4;
+	A_close -> n_3;
+	A_close -> n_1;
+	A_close -> n_2;
+	n_0 -> n_3[label="A_down"];
+	n_0 -> n_4;
+	n_1 -> n_5[label="A_open"];
+	n_3 -> D1_close_down;
+	n_4 -> D2_stop;
+	n_5 -> D3_close_up;
+
+}
